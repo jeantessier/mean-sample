@@ -22,7 +22,7 @@ module.exports.booksList = function(req, res) {
                 return;
             }
             console.log(books);
-            sendJSONresponse(res, 200, books);
+            sendJSONresponse(res, 200, { title: "Recent Readings", books: books });
         });
 };
 
