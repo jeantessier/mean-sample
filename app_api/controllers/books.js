@@ -71,7 +71,7 @@ module.exports.booksDeleteOne = function(req, res) {
             });
     } else {
         sendJSONresponse(res, 404, {
-            "message": "No locationid"
+            "message": "No bookid in request"
         });
     }
 };
