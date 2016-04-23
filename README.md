@@ -12,3 +12,5 @@ You can run it locally with:
 
     $ npm update
     $ heroku local
+
+And point your browser to [localhost:5000](http://localhost:5000/).
