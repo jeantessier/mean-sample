@@ -27,15 +27,15 @@ angular
 
             var deferred = $q.defer();
 
-            $http.get(BACKEND_URL)
-                    .success(function(data, status, headers, config) {
+            $http.get(BACKEND_URL).then(
+                    function successCallback(response) {
                         $log.info("success data");
-                        $log.info(data);
-                        service.title = data.title;
-                        service.books = data.books;
+                        $log.info(response.data);
+                        service.title = response.data.title;
+                        service.books = response.data.books;
                         deferred.resolve(service);
-                    })
-                    .error(deferred.reject);
+                    },
+                    deferred.reject;
 
             return deferred.promise;
         };
