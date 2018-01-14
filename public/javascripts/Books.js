@@ -35,7 +35,8 @@ angular
                         service.books = response.data.books;
                         deferred.resolve(service);
                     },
-                    deferred.reject;
+                    deferred.reject
+                );
 
             return deferred.promise;
         };
