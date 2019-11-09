@@ -6,3 +6,6 @@ npm-debug.log
 
 # Environment variables
 .env
+
+# JetBrains project files
+.idea
