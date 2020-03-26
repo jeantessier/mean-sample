@@ -4,7 +4,7 @@ var dbURI = "mongodb://localhost/jeantessier";
 if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI;
 }
-mongoose.connect(dbURI, {useNewUrlParser: true});
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.on("connected", function() {
     console.log("Mongoose connected to " + dbURI);
