@@ -41,4 +41,4 @@ You can update NPM packages with:
 After committing your changes, push them to Heroku to update the running
 example.
 
-    $ git push master heroku
+    $ git push heroku master
