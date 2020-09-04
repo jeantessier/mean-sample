@@ -10,6 +10,7 @@ var sendJSONresponse = function(res, status, content) {
 module.exports.booksList = function(req, res) {
     Book
         .find()
+        .sort({ start: -1 })
         .exec(function(err, books) {
             if (!books) {
                 sendJSONresponse(res, 404, {
