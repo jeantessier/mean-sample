@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var timestamps = require('mongoose-timestamp');
 
 const titleSchema = new mongoose.Schema({
     title: String,
@@ -18,5 +19,6 @@ const bookSchema = new mongoose.Schema({
     start: String,
     stop: String
 });
+bookSchema.plugin(timestamps)
 
 mongoose.model('Book', bookSchema);

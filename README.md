@@ -57,7 +57,9 @@ db.books.insertOne(
     ],
     body: "<p>A funny comic book about a girl vampire and a boy werewolf. Filled with sarcastic humor, like:</p><blockquote> <p>- We should have a baby.</p><p>- For dinner?</p><footer>p. 86</footer></blockquote> <p>It pokes fun at many of the vampire and werewolf and new love tropes.</p>",
     start: "2020-09-01",
-    stop: "2020-09-01"
+    stop: "2020-09-01",
+    createdAt: new Date(),
+    updatedAt: new Date()
   }
 )
 ```
