@@ -18,11 +18,11 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.setPassword = function(password) {
     this.salt = crypto.randomBytes(16).toString('hex');
-    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+    this.hash = this.hashPassword(password);
 };
 
 userSchema.methods.validPassword = function(password) {
-    const hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+    const hash = this.hashPassword(password);
     return this.hash === hash;
 };
 
@@ -36,5 +36,9 @@ userSchema.methods.generateJwt = function() {
         exp: parseInt(expiry.getTime() / 1000),
     }, process.env.JWT_SECRET);
 };
+
+userSchema.methods.hashPassword = function(password) {
+    return crypto.pbkdf2Sync(password, this.salt, 4096, 512, "sha256").toString("base64");
+}
 
 mongoose.model('User', userSchema);
