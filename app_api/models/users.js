@@ -38,7 +38,7 @@ userSchema.methods.generateJwt = function() {
 };
 
 userSchema.methods.hashPassword = function(password) {
-    return crypto.pbkdf2Sync(password, this.salt, 4096, 512, "sha256").toString("base64");
+    return crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
 }
 
 mongoose.model('User', userSchema);
