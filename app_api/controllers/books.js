@@ -1,17 +1,17 @@
-var mongoose = require('mongoose');
-var Book = mongoose.model('Book');
+const mongoose = require('mongoose');
+const Book = mongoose.model('Book');
 
-var sendJSONresponse = function(res, status, content) {
+const sendJSONresponse = (res, status, content) => {
     res.status(status);
     res.json(content);
 };
 
 /* GET list of books */
-module.exports.booksList = function(req, res) {
+module.exports.booksList = (req, res) => {
     Book
         .find()
         .sort({ start: -1 })
-        .exec(function(err, books) {
+        .exec((err, books) => {
             if (!books) {
                 sendJSONresponse(res, 404, {
                     "message": "No books not found"
@@ -28,12 +28,12 @@ module.exports.booksList = function(req, res) {
 };
 
 /* GET a book by the id */
-module.exports.booksReadOne = function(req, res) {
+module.exports.booksReadOne = (req, res) => {
     console.log('Finding book details', req.params);
     if (req.params && req.params.bookid) {
         Book
             .findById(req.params.bookid)
-            .exec(function(err, book) {
+            .exec((err, book) => {
                 if (!book) {
                     sendJSONresponse(res, 404, {
                         "message": "bookid not found"
@@ -56,12 +56,12 @@ module.exports.booksReadOne = function(req, res) {
 };
 
 /* DELETE /api/books/:bookid */
-module.exports.booksDeleteOne = function(req, res) {
-    var bookid = req.params.bookid;
+module.exports.booksDeleteOne = (req, res) => {
+    const bookid = req.params.bookid;
     if (bookid) {
         Book
             .findByIdAndRemove(bookid)
-            .exec(function(err, book) {
+            .exec((err, book) => {
                 if (err) {
                     console.log(err);
                     sendJSONresponse(res, 404, err);

@@ -1,14 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var jwt = require('express-jwt');
-var auth = jwt({
+const express = require('express');
+const router = express.Router();
+const jwt = require('express-jwt');
+const auth = jwt({
     secret: process.env.JWT_SECRET,
     userProperty: 'payload',
     algorithms: ['HS256']
 });
 
-var ctrlBooks = require('../controllers/books');
-var ctrlAuth = require('../controllers/authentication');
+const ctrlBooks = require('../controllers/books');
+const ctrlAuth = require('../controllers/authentication');
 
 router.get('/books', ctrlBooks.booksList);
 // router.post('/books', ctrlBooks.booksCreate);

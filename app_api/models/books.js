@@ -1,11 +1,11 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var titleSchema = new mongoose.Schema({
+const titleSchema = new mongoose.Schema({
     title: String,
     link: String
 });
 
-var bookSchema = new mongoose.Schema({
+const bookSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
