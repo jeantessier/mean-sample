@@ -10,15 +10,15 @@
     "npm": "~7.20.0"
   },
   "dependencies": {
-    "acorn": "^5.7.4",
+    "acorn": "^8.5.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
-    "debug": "~3.1.0",
+    "debug": "^4.3.2",
     "dotenv": "*",
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.7",
+    "mongoose": "^6.0.6",
     "mongoose-timestamp": "^0.6.0",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
