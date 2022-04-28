@@ -7,24 +7,24 @@
     "start": "node ./bin/www"
   },
   "engines": {
-    "node": "~16.3.0",
-    "npm": "~7.20.0"
+    "node": "~17.8.0",
+    "npm": "~8.5.5"
   },
   "dependencies": {
-    "acorn": "^8.5.0",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
-    "debug": "^4.3.2",
+    "acorn": "*",
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "debug": "*",
     "dotenv": "*",
-    "express": "^4.17.1",
-    "express-jwt": "^6.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.6",
-    "mongoose-timestamp": "^0.6.0",
-    "morgan": "^1.10.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "pug": "^3.0.1",
-    "serve-favicon": "^2.5.0"
+    "express": "*",
+    "express-jwt": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "mongoose-timestamp": "*",
+    "morgan": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "pug": "*",
+    "serve-favicon": "*"
   }
 }

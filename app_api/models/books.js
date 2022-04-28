@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
-var timestamps = require('mongoose-timestamp');
+const mongoose = require('mongoose')
+var timestamps = require('mongoose-timestamp')
 
 const titleSchema = new mongoose.Schema({
     title: String,
     link: String
-});
+})
 
 const bookSchema = new mongoose.Schema({
     name: {
@@ -18,7 +18,7 @@ const bookSchema = new mongoose.Schema({
     body: String,
     start: String,
     stop: String
-});
+})
 bookSchema.plugin(timestamps)
 
-mongoose.model('Book', bookSchema);
+mongoose.model('Book', bookSchema)
