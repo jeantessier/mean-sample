@@ -15,13 +15,17 @@ a [running example](https://afternoon-cliffs-9951.herokuapp.com/Books.html).
 
 Make sure all the packages are present.
 
-    $ npm install
+```bash
+npm install
+```
 
 ### Running with Heroku
 
 You can run it locally with:
 
-    $ heroku local
+```bash
+heroku local
+```
 
 And point your browser to [localhost:5000](http://localhost:5000/).
 
@@ -29,7 +33,9 @@ And point your browser to [localhost:5000](http://localhost:5000/).
 
 You can run it locally with:
 
-    $ npm start
+```bash
+npm start
+```
 
 And point your browser to [localhost:3000](http://localhost:3000/).
 
@@ -38,7 +44,7 @@ And point your browser to [localhost:3000](http://localhost:3000/).
 You have to populate the database directly.  You can use this template to add
 books to the test data:
 
-```
+```javascript
 db.books.insertOne(
   {
     name: "Fangs",
@@ -68,9 +74,16 @@ db.books.insertOne(
 
 You can update NPM packages with:
 
-    $ npm update
+```bash
+npm update
+```
 
 After committing your changes, push them to Heroku to update the running
 example.
 
-    $ git push heroku main
+Changes to the `main` branch should deploy automatically.  You can do a manual
+deployment with:
+
+```bash
+git push heroku main
+```
