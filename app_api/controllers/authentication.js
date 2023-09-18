@@ -22,13 +22,15 @@ module.exports.register = (req, res) => {
 
     user.setPassword(req.body.password)
 
-    user.save(err => {
-        if (err) {
-            sendJSONresponse(res, 404, err)
-        } else {
+    user
+        .save()
+        .then(() => {
             const token = user.generateJwt()
-            sendJSONresponse(res, 200, { token })
-        }
+            sendJSONresponse(res, 200, {
+                "token": token
+            })
+        }).catch(err => {
+        sendJSONresponse(res, 404, err)
     })
 }
 
