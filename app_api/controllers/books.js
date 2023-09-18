@@ -20,7 +20,7 @@ module.exports.booksList = (req, res) => {
 module.exports.booksReadOne = (req, res) => {
     console.log('Finding book details', req.params)
     Book
-        .findOne({ _id: req.params.bookid })
+        .findById(req.params.bookid)
         .then(book => {
             if (book) {
                 sendJSONresponse(res, 200, book)
@@ -36,7 +36,7 @@ module.exports.booksReadOne = (req, res) => {
 /* DELETE /api/books/:bookid */
 module.exports.booksDeleteOne = (req, res) => {
     Book
-        .findOneAndDelete({ _id: req.params.bookid })
+        .findByIdAndDelete(req.params.bookid)
         .then(book => {
             if (book) {
                 console.log(`Book id ${req.params.bookid} deleted`)
