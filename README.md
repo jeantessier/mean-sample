@@ -37,7 +37,9 @@ You can run it locally with:
 npm start
 ```
 
-And point your browser to [localhost:3000](http://localhost:3000/).
+And point your browser to [localhost:3000](http://localhost:3000/Books.html).
+
+Or call the REST endpoint at [localhost:3000/api](http://localhost:3000/api/books).
 
 ### Test Data
 
